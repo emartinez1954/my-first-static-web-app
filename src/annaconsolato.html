@@ -348,7 +348,7 @@ display:none;
 
 .ventana-emergente {
   top: 18% !important;
-    left: 39% !important;
+    left: 35% !important;
     width: 70%;
 }
 .ventana-emergente.persona4.visible {
@@ -390,7 +390,7 @@ display:none;
     right:0;
     width:0;
     background: black;
-    animation: escribir 5s steps(50) ;
+    animation: escribir 1s steps(60) ;
 }
 
 @keyframes escribir {
@@ -478,31 +478,23 @@ display:none;
 
 
   <script>
-            /* Agregar interacción con JavaScript */
-            const puntos = document.querySelectorAll('.punto');
-    const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
+         
+    /* Agregar interacción con JavaScript */
+const puntos = document.querySelectorAll('.punto');
+const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
 
-    puntos.forEach((punto, index) => {
-      let visible = false; // Variable para rastrear el estado de la ventana emergente
+puntos.forEach((punto, index) => {
+  punto.addEventListener('mouseover', () => {
+    ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
+    ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
+    ventanasEmergentes[index].classList.add('visible');
+  });
 
-      punto.addEventListener('click', () => {
-        if (visible) {
-          ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente
-          // Ocultar el elemento cambiando el estilo 'display' a 'none'
+  punto.addEventListener('mouseout', () => {
+    ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente cuando el cursor se mueve fuera
+  });
+});
 
-        } else {
-          ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
-          ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
-          ventanasEmergentes[index].classList.add('visible');
-        }
-
-        visible = !visible; // Cambiar el estado del visible para la próxima vez
-
-
-      });
-
-
-    });
   
    // Reemplaza esta URL con la que deseas compartir
           var shareURL = "https://mescalina.mx/leadingwomen23/";
