@@ -1,17 +1,948 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App Test</title>
+  <title>Leadingwomen</title>
 </head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+  body:not(.nectar-no-flex-height) #ajax-content-wrap, body:not(.nectar-no-flex-height) #ajax-content-wrap .blurred-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-family: 'Poppins' !important;
+}
+#ajax-content-wrap {
+    background: url(https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png) no-repeat !important;
+}
+.container-wrap {
+    background: transparent !important;
+}
+  .bg {
+    background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat !important;
+    background-size: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -3 !important;
+    margin-top: 50%;
+  }
+
+  .bg:before {
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: #000 !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    opacity: 0.3 !important;
+    z-index: -3 !important;
+  }
+
+  @keyframes sf-fly-by-1 {
+    from {
+      transform: translateZ(-600px);
+      opacity: 0.5;
+    }
+
+    to {
+      transform: translateZ(0);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes sf-fly-by-2 {
+    from {
+      transform: translateZ(-1200px);
+      opacity: 0.5;
+    }
+
+    to {
+      transform: translateZ(-600px);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes sf-fly-by-3 {
+    from {
+      transform: translateZ(-1800px);
+      opacity: 0.5;
+    }
+
+    to {
+      transform: translateZ(-1200px);
+      opacity: 0.5;
+    }
+  }
+
+  .star-field {
+      background: black !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px !important;
+    -webkit-perspective: 600px !important;
+    z-index: 0;
+  }
+
+  .star-field .layer {
+    box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc, -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7, 758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke, 183px 389px #c7c7c7,
+      524px -237px #f0f0f0, 679px -535px #e3e3e3, 158px 399px #ededed, 157px 249px #ededed, 81px -450px #ebebeb, 719px -360px #c2c2c2, -499px 473px #e8e8e8, -158px -349px #d4d4d4, 870px -134px #cfcfcf, 446px 404px #c2c2c2,
+      440px 490px #d4d4d4, 414px 507px #e6e6e6, -12px 246px #fcfcfc, -384px 369px #e3e3e3, 641px -413px #fcfcfc, 822px 516px #dbdbdb, 449px 132px #c2c2c2, 727px 146px #f7f7f7, -315px -488px #e6e6e6, 952px -70px #e3e3e3,
+      -869px -29px #dbdbdb, 502px 80px #dedede, 764px 342px #e0e0e0, -150px -380px #dbdbdb, 654px -426px #e3e3e3, -325px -263px #c2c2c2, 755px -447px #c7c7c7, 729px -177px #c2c2c2, -682px -391px #e6e6e6, 554px -176px #ededed,
+      -85px -428px #d9d9d9, 714px 55px #e8e8e8, 359px -285px #cfcfcf, -362px -508px #dedede, 468px -265px #fcfcfc, 74px -500px #c7c7c7, -514px 383px #dbdbdb, 730px -92px #cfcfcf, -112px 287px #c9c9c9, -853px 79px #d6d6d6,
+      828px 475px #d6d6d6, -681px 13px #fafafa, -176px 209px #f0f0f0, 758px 457px #fafafa, -383px -454px #ededed, 813px 179px #d1d1d1, 608px 98px whitesmoke, -860px -65px #c4c4c4, -572px 272px #f7f7f7, 459px 533px #fcfcfc,
+      624px -481px #e6e6e6, 790px 477px #dedede, 731px -403px #ededed, 70px -534px #cccccc, -23px 510px #cfcfcf, -652px -237px whitesmoke, -690px 367px #d1d1d1, 810px 536px #d1d1d1, 774px 293px #c9c9c9, -362px 97px #c2c2c2,
+      563px 47px #dedede, 313px 475px #e0e0e0, 839px -491px #e3e3e3, -217px 377px #d4d4d4, -581px 239px #c2c2c2, -857px 72px #cccccc, -23px 340px #dedede, -837px 246px white, 170px -502px #cfcfcf, 822px -443px #e0e0e0, 795px 497px #e0e0e0,
+      -814px -337px #cfcfcf, 206px -339px #f2f2f2, -779px 108px #e6e6e6, 808px 2px #d4d4d4, 665px 41px #d4d4d4, -564px 64px #cccccc, -380px 74px #cfcfcf, -369px -60px #f7f7f7, 47px -495px #e3e3e3, -383px 368px #f7f7f7, 419px 288px #d1d1d1,
+      -598px -50px #c2c2c2, -833px 187px #c4c4c4, 378px 325px whitesmoke, -703px 375px #d6d6d6, 392px 520px #d9d9d9, -492px -60px #c4c4c4, 759px 288px #ebebeb, 98px -412px #c4c4c4, -911px -277px #c9c9c9;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+  }
+
+  .star-field .layer:nth-child(1) {
+    animation: sf-fly-by-1 5s linear infinite;
+  }
+
+  .star-field .layer:nth-child(2) {
+    animation: sf-fly-by-2 5s linear infinite;
+  }
+
+  .star-field .layer:nth-child(3) {
+    animation: sf-fly-by-3 5s linear infinite;
+  }
+
+  /*Estilos leading*/
+  /* Estilos CSS para los puntos de información */
+  .info-point {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+  }
+
+  /* Estilos CSS para el loader */
+  .loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 999;
+    text-align: center;
+    padding-top: 20%;
+  }
+
+  /* Estilos para los puntos interactivos */
+  .punto {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+  }
+
+  /* Estilos para la ventana emergente */
+  .ventana-emergente {
+  display: none;
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 0px;
+  color: white;
+  transition: opacity 1s; /* Añade una transición de 0.5 segundos para cambiar la opacidad */
+  opacity: 0; /* Inicialmente, establece la opacidad en 0 */
+}
+
+/* Cuando el elemento tiene la clase 'visible', se mostrará con opacidad 1 */
+.ventana-emergente.visible {
+  display: block;
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+  .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Cambiar el estilo al pasar el mouse por encima */
+  .custom-button:hover {
+    background-color: #297fb8;
+  }
+
+  .green {
+    background: #66FF99;
+  }
+.PersonajeM {
+display:none;
+}
+    
+  .PersonajeD {
+  width: 100% !important;
+    margin-left: 0%;
+    height: 100% !important;
+    object-fit: cover;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display:block;
+  }
+
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+  }
+
+  .pulse {
+    animation: pulse-animation 2s infinite;
+    background-color: white;
+  }
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(252, 252, 252, 0.2);
+    }
+
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+  }
+
+  h5 {
+    color: white !important;
+  }
+
+  .persona1 {
+  margin-top: -10%;
+    margin-left: 40%;
+  }
+
+  .persona2 {
+    margin-top: 7%;
+    margin-left: 49%;
+  }
+
+  .persona3 {
+   margin-top: 19%;
+    margin-left: 53%;
+  }
+
+  .persona4 {
+    margin-top: 26%;
+    margin-left: 50%;
+  }
+
+  .persona5 {
+   margin-top: 35%;
+    margin-left: 45%;
+  }
+
+  .persona6 {
+    margin-top: 33%;
+    margin-left: 35%;
+  }
+
+  .persona7 {
+    margin-top: 23%;
+    margin-left: 40%;
+  }
+
+  .persona8 {
+    margin-top: 17%;
+    margin-left: 43%;
+  }
+
+  .persona9 {
+    margin-top: 13%;
+    margin-left: 34%;
+  }
+
+  .persona10 {
+   margin-top: 25%;
+    margin-left: 26%;
+  }
+
+  .persona11 {
+   margin-top: 33%;
+    margin-left: 18%;
+  }
+
+  .persona12 {
+   margin-top: 25%;
+    margin-left: 13%;
+  }
+
+  .persona13 {
+    margin-top: 17%;
+    margin-left: 22%;
+  }
+
+  .persona14 {
+    margin-top: 19%;
+    margin-left: 7%;
+  }
+
+  .persona15 {
+    margin-top: 10%;
+    margin-left: 16%;
+  }
+
+  .persona16 {
+   margin-top: 3%;
+    margin-left: 24%;
+  }
+
+  #persona1, #persona2, #persona3, #persona4, #persona5, #persona6, #persona7, #persona8, #persona9, #persona10, #persona11, #persona12, #persona13, #persona14, #persona15, #persona16 {
+    margin-top: -15px;
+    cursor: pointer;
+  }
+
+ 
+
+
+  /*Descripcion*/
+  .containerDesc {
+          text-align: left !important;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    position: relative;
+    padding: 0px 10px 0px 10px;
+    background-color: black;
+  }
+
+
+  .circle {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .top-left {
+    top: -3px;
+    left: -3px;
+  }
+
+  .top-right {
+    top: -3px;
+    right: -3px;
+  }
+
+  .bottom-left {
+    bottom: -3px !important;
+    left: -3px !important;
+  }
+
+  .bottom-right {
+    bottom: -3px !important;
+    right: -3px !important;
+  }
+  h4 {
+    color: white !important;
+    font-family: 'Poppins';
+    font-size: 22px;
+    margin-top: 0px !important;
+    margin-bottom: 0px;
+}
+p {
+    font-family: 'Poppins';
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.Nubes{
+    Display:block;
+}
+.NubesM{
+    Display:None;
+}
+.texto {
+    color: white;
+    width: 23%;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 80px;
+    font-family: 'Poppins';
+    line-height: 90px;
+}
+/*Responsivo*/
+  @media screen and (max-width: 768px) {
+   .PersonajeD {
+display:none;
+}
+   .texto {
+    font-family: 'Poppins';
+    color: white;
+    width: 23%;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 80px;
+} 
+  .PersonajeM {
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:block;
+}
+.persona8 {
+   margin-top: 58%;
+    margin-left: 39%;
+}
+.persona2, .persona3, .persona4, .persona5, .persona6, .persona7, .persona1, .persona9, .persona10, .persona11, .persona12, .persona13, .persona14, .persona15, .persona16{
+    display:none;
+    
+}
+.Nubes{
+    Display:none;
+}
+.NubesM{
+    Display:block;
+}
+
+  .ventana-emergente.persona8.visible.black-background {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -26% !important;
+    left: -39% !important;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+    .containerDesc {
+      text-align: left !important;
+    width: 100%;
+    margin-left: -120%;
+    height: 7%;
+    margin-top: -23%;
+    border: 1px solid white;
+    position: relative;
+    padding: 2px 10px 1px 10px;
+    background-color: black;
+    z-index: 0;
+}
+.texto {
+    color: white;
+    width: 73%;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+  }
+  /*Animacion de texto*/
+
+  .AnnaConsolato { 
+	position: relative; 
+	float: left;
+	background: black;
+	color: #fff;
+	font-size: 2em;
+}
+
+ .Escribe {
+    position:absolute;
+    right:0;
+    width:0;
+    background: black;
+    animation: escribir 5s steps(30) ;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
+#hackerLightning {
+  width: 100vw;
+  height: auto;
+  color: #fff;
+  word-break: break-all;
+  overflow: hidden;
+  text-transform: uppercase;
+  
+}
+#hackerLightning span {
+  display: inline-block;
+  opacity: 0;
+  color: black;
+  transition: opacity 0s ease;
+}
+#hackerLightning span.static {
+  opacity: 1 !important;
+  color: #fff !important;
+}
+</style>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App Test</h1>
-  </main>
-</body>
+  <!-- contenido html -->
 
+
+<div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+
+  <div class="foto">
+<h1 class="texto">Las 16 súper mujeres</h1>
+<img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png">
+<img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-mobile-1-1.png">
+    <img class="PersonajeD" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-desk-1-1.png"
+      alt="Imagen a pantalla completa">
+ <img class="PersonajeM" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-mobile-1.png"
+      alt="Imagen a pantalla completa">
+
+    <!-- Punto 1 -->
+    <div class="persona1 punto pulse info-point" style="top: 40%; left: 32%;"></div>
+    <div class="ventana-emergente persona1" style="top: 29%; left: 31%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona1">ver más</p>
+      </div>
+
+    </div>
+
+    <!-- Punto 2 -->
+    <div class="persona2 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona2" style="top: 9%; left: 31%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona2">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 3 -->
+    <div class="persona3 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona3" style="top: 18%; left: 29%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona3">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 4 -->
+    <div class="persona4 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona4" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona4">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 5 -->
+    <div class="persona5 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona5" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona5">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 6 -->
+    <div class="persona6 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona6" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona6">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 7 -->
+    <div class="persona7 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona7" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona7">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 8 -->
+    <div class="persona8 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona8" style="top: 8%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">Anna Consolato<span class="Escribe">&#160;</span></h4>
+        <p class="VerMas" id="persona8">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 9 -->
+    <div class="persona9 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona9" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona9">ver más</p>
+      </div>
+    </div>
+    <!-- Punto 10 -->
+    <div class="persona10 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona10" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona10">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 3 -->
+    <div class="persona11 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona11" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona11">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 12 -->
+    <div class="persona12 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona12" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona12">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 13 -->
+    <div class="persona13 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona13" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona13">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 14 -->
+    <div class="persona14 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona14" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona14">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 3 -->
+    <div class="persona15 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona15" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona15">ver más</p>
+      </div>
+    </div>
+
+    <!-- Punto 16 -->
+    <div class="persona16 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona16" style="top: 18%; left: 18%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4>Alejandra Corona</h4>
+        <p id="persona16">ver más</p>
+      </div>
+
+    </div>
+  </div>
+  <!-- Loader -->
+  <!--<div class="loader" id="loader"><img src="https://mescalina.mx/wp-content/uploads/2023/10/loader.gif" alt=""></div>-->
+  </div>
+
+  <div id="hackerLightning" onclick="animateBolts()"><div></div>
+
+  <script>
+    // Función para mostrar el loader y redirigir después de 2 segundos
+        function redirectToPage(url) {
+          document.getElementById('hackerLightning').style.display = 'block';
+          setTimeout(function () {
+            window.location.href = url;
+          }, 2000);
+        }
+          /* Agregar interacción con JavaScript */
+    const puntos = document.querySelectorAll('.punto');
+    const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
+
+    puntos.forEach((punto, index) => {
+      let visible = false; // Variable para rastrear el estado de la ventana emergente
+
+      punto.addEventListener('click', () => {
+        if (visible) {
+          ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente
+          // Ocultar el elemento cambiando el estilo 'display' a 'none'
+
+        } else {
+          ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
+          ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
+          ventanasEmergentes[index].classList.add('visible');
+        }
+
+        visible = !visible; // Cambiar el estado del visible para la próxima vez
+
+
+      });
+
+
+    });
+    
+        // Asigna un evento de clic a cada punto de información
+        document.getElementById('persona1').addEventListener('click', function () {
+          redirectToPage('https://mescalina.mx/alejandracorona/');
+        });
+    
+        document.getElementById('persona2').addEventListener('click', function () {
+          redirectToPage('pagina2.html');
+        });
+    
+        document.getElementById('persona3').addEventListener('click', function () {
+          redirectToPage('pagina3.html');
+        });
+        document.getElementById('persona4').addEventListener('click', function () {
+          redirectToPage('pagina4.html');
+        });
+        document.getElementById('persona5').addEventListener('click', function () {
+          redirectToPage('pagina5.html');
+        });
+        document.getElementById('persona6').addEventListener('click', function () {
+          redirectToPage('pagina6.html');
+        });
+        document.getElementById('persona7').addEventListener('click', function () {
+          redirectToPage('pagina7.html');
+        });
+        document.getElementById('persona8').addEventListener('click', function () {
+          redirectToPage('https://mescalina.mx/annaconsolato/');// aqui cambiar el link
+        });
+        document.getElementById('persona9').addEventListener('click', function () {
+          redirectToPage('pagina9.html');
+        });
+        document.getElementById('persona10').addEventListener('click', function () {
+          redirectToPage('pagina10.html');
+        });
+        document.getElementById('persona11').addEventListener('click', function () {
+          redirectToPage('pagina11.html');
+        });
+        document.getElementById('persona12').addEventListener('click', function () {
+          redirectToPage('pagina12.html');
+        });
+        document.getElementById('persona13').addEventListener('click', function () {
+          redirectToPage('pagina13.html');
+        });
+        document.getElementById('persona14').addEventListener('click', function () {
+          redirectToPage('pagina14.html');
+        });
+        document.getElementById('persona15').addEventListener('click', function () {
+          redirectToPage('pagina15.html');
+        });
+        document.getElementById('persona16').addEventListener('click', function () {
+          redirectToPage('pagina16.html');
+        });
+    
+    
+        /* Loader*/
+        const DICTIONARY = "0123456789qwertyuiopasdfghjklzxcvbnmdewknewcnweVNKEWNFWEnrfsjenfeknkfnwekrnfrenafknreafgnoeragfer".split('');
+const LETTER_TOTAL = 406;
+const CENTER_WORD = '';
+const CW_START = LETTER_TOTAL/2 - CENTER_WORD.length/2;
+const CW_END = CW_START + CENTER_WORD.length;
+const ROW_LENGTH = 45;
+
+var getBoltStartingPositions = function() {
+  var results = [];
+  results.push(CW_START);
+  results.push(CW_END + 1);
+  for(var i = CW_START; i < CW_END + 1; i++) {
+    var top = i - ROW_LENGTH;
+    var bottom = i + ROW_LENGTH+1;
+    results.push(top, bottom);
+  }
+  return results;
+}
+
+const STARTING_POSITIONS = getBoltStartingPositions();
+
+var el = document.getElementById('hackerLightning');
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var genRanChar = function() {
+ var index = Math.floor(Math.random() * DICTIONARY.length);
+  return DICTIONARY[index];
+}
+
+var genRanString = function(amt) {
+  var string = ``;
+  var wordIndex = 0;
+  for(var i = 0; i < amt; i++) {
+    if(i >= CW_START && i < CW_END) {
+      string += `<span class="static">${CENTER_WORD[wordIndex]}</span>`;
+      wordIndex++;
+    }
+    else {
+      string += `<span>${genRanChar()}</span>`;
+    }
+  }
+  return string;
+}
+
+function pickRandomProperty(obj) {
+    var result;
+    var count = 0;
+    for (var prop in obj)
+        if (Math.random() < 1/++count)
+           result = prop;
+    return result;
+}
+
+var Bolt = function() {
+  this.position = STARTING_POSITIONS[getRandomIntInclusive(0, STARTING_POSITIONS.length)];
+  this.lastDirection = '';
+  this.moves = {
+    left: -1,
+    right: 1,
+    up: -ROW_LENGTH,
+    down: ROW_LENGTH
+  }
+  this.move = function() {
+    var direction = pickRandomProperty(this.moves);
+    while(direction === this.lastDirection) {
+      direction = pickRandomProperty(this.moves);
+    }
+    this.lastDirection = direction;
+    var move = this.moves[direction];
+    var current = document.querySelector(`#hackerLightning span:nth-child(${this.position})`);
+    var next = document.querySelector(`#hackerLightning span:nth-child(${this.position += move})`);
+    if(next) {
+      current.style.opacity = 1;
+      current.style.color = 'black';
+      next.style.opacity = 1;
+      next.style.color = '#fff';
+    }
+    else {
+      current.style.opacity = 1;
+      current.style.color = 'black';
+      return false;
+    }
+  }
+  this.strike = function() {
+    var self = this;
+    var animate = setInterval(function() {
+      var move = self.move();
+      if(move === false) {
+        clearInterval(animate);
+      }
+    }, 16);
+  }
+}
+
+el.innerHTML = genRanString(LETTER_TOTAL);
+
+var genBolts = function(amt) {
+  var results = [];
+  for(var i = 0; i < amt; i++) {
+    results.push(new Bolt());
+  }
+  return results;
+}
+
+var animateBolts = function() {
+  var bolts = genBolts(15);
+  for(var i = 0; i < bolts.length; i++) {
+    bolts[i].strike();
+  }
+}
+
+animateBolts();
+       
+
+
+     </script>
+</body>
 </html>
