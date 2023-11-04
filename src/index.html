@@ -12,6 +12,10 @@
     flex-direction: column;
     flex-grow: 1;
     font-family: 'Poppins' !important;
+    background-color: black;
+}
+body {
+    background: black;
 }
 #ajax-content-wrap {
     background: url(https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png) no-repeat !important;
@@ -89,7 +93,7 @@
     height: 100%;
     perspective: 600px !important;
     -webkit-perspective: 600px !important;
-    z-index: 0;
+    z-index: 5;
   }
 
   .star-field .layer {
@@ -395,6 +399,14 @@ p {
 }
 /*Responsivo*/
   @media screen and (max-width: 768px) {
+    #hackerLightningContainer {
+    font-family: 'Poppins' !important;
+    background-color: black;
+    font-size: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
    .PersonajeD {
 display:none;
 }
@@ -478,12 +490,24 @@ display:none;
     right:0;
     width:0;
     background: black;
-    animation: escribir 5s steps(30) ;
+    animation: escribir 1s steps(70) ;
 }
 
 @keyframes escribir {
     from { width: 100% }
     to { width:0 }
+}
+
+
+
+
+#hackerLightningContainer{
+  font-family: 'Poppins' !important;
+  background-color: black;
+  font-size: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #hackerLightning {
@@ -493,7 +517,6 @@ display:none;
   word-break: break-all;
   overflow: hidden;
   text-transform: uppercase;
-  
 }
 #hackerLightning span {
   display: inline-block;
@@ -509,9 +532,9 @@ display:none;
 
 <body>
   <!-- contenido html -->
+  
 
-
-<div class="star-field">
+<div id="star-field" class="star-field">
   <div class="layer"></div>
   <div class="layer"></div>
   <div class="layer"></div>
@@ -733,16 +756,29 @@ display:none;
   <!--<div class="loader" id="loader"><img src="https://mescalina.mx/wp-content/uploads/2023/10/loader.gif" alt=""></div>-->
   </div>
 
-  <div id="hackerLightning" onclick="animateBolts()"><div></div>
-
+  <div id="hackerLightningContainer"><div id="hackerLightning" onclick="animateBolts()"><div></div>
+  
   <script>
-    // Función para mostrar el loader y redirigir después de 2 segundos
+    /*
         function redirectToPage(url) {
           document.getElementById('hackerLightning').style.display = 'block';
           setTimeout(function () {
             window.location.href = url;
           }, 2000);
-        }
+        }*/
+       
+  // Función para mostrar el loader y redirigir después de 2 segundos
+  function redirectToPage(url) {
+    document.getElementById('hackerLightning').style.display = 'block'; // Mostrar la animación
+    document.getElementById('star-field').style.display = 'none';
+    animateBolts(); // Iniciar la animación de rayos
+
+    setTimeout(function () {
+      window.location.href = url; // Redirigir después de 2 segundos
+    }, 1000);
+  }
+
+
           /* Agregar interacción con JavaScript */
     const puntos = document.querySelectorAll('.punto');
     const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
@@ -823,12 +859,12 @@ display:none;
     
     
         /* Loader*/
-        const DICTIONARY = "0123456789qwertyuiopasdfghjklzxcvbnmdewknewcnweVNKEWNFWEnrfsjenfeknkfnwekrnfrenafknreafgnoeragfer".split('');
-const LETTER_TOTAL = 406;
+        const DICTIONARY = "0123456789qwertyuiopasdfghjklzxcvbnmdewknewcnweVNKEWNFWEnrfsjenfeknkfnwekrnfrenafknreafgnoeragferbbjkbjbnjnjnjbhvgvgvbxhasbxhsbxhasxlHSBXBSCXBASHB".split('');
+const LETTER_TOTAL = 806;
 const CENTER_WORD = '';
 const CW_START = LETTER_TOTAL/2 - CENTER_WORD.length/2;
 const CW_END = CW_START + CENTER_WORD.length;
-const ROW_LENGTH = 45;
+const ROW_LENGTH = 65;
 
 var getBoltStartingPositions = function() {
   var results = [];
@@ -932,14 +968,15 @@ var genBolts = function(amt) {
   return results;
 }
 
-var animateBolts = function() {
-  var bolts = genBolts(15);
-  for(var i = 0; i < bolts.length; i++) {
+function animateBolts() {
+  var bolts = genBolts(20);
+  for (var i = 0; i < bolts.length; i++) {
     bolts[i].strike();
   }
 }
 
-animateBolts();
+setInterval(animateBolts, 100);
+
        
 
 
