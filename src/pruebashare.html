@@ -1,66 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Agregar metadatos Open Graph -->
-     <meta property="og:title" content="TLeading women 2023">
-     <meta property="og:description" content="Descripción de tu página Leading women">
-     <meta property="og:image" content="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png">
-     <meta property="og:url" content="https://mescalina.mx/">
-    <title>Compartir en LinkedIn</title>
-   <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    font-size: 24px;
-}
-
-button {
-    background-color: #0077B5;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-   </style>
+  <title>Compartir en LinkedIn con Token de Acceso</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Compartir en LinkedIn</h1>
-        <button id="shareButton">Compartir en LinkedIn</button>
-    </div>
-    <script >
-    document.getElementById('shareButton').addEventListener('click', function () {
-    // URL de la imagen que deseas compartir en LinkedIn
-    const imageUrl = 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png';
+  <button id="compartirButton">Compartir en LinkedIn</button>
 
-    // URL de la página a la que se redirigirá después de compartir en LinkedIn
-    const redirectUrl = 'https://mescalina.mx/';
+  <script>
+    // Función para compartir en LinkedIn con un token de acceso
+    function compartirEnLinkedIn() {
+      // Reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real
+      var accessToken = 'AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA';
 
-    // Abre una nueva ventana emergente para compartir en LinkedIn
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(redirectUrl)}&image=${encodeURIComponent(imageUrl)}`, 'Compartir en LinkedIn', 'width=600,height=400');
-});
+      // Datos de la publicación
+      var postData = {
+        comment: 'Texto del comentario',
+        content: {
+          title: 'Título de la publicación',
+          description: 'Descripción de la publicación',
+          submittedUrl: 'https://mescalina.mx/',
+          submittedImageUrl: 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png'
+        }
+      };
 
-    </script>
+      // Realiza una llamada a la API de LinkedIn para compartir la publicación
+      fetch('https://api.linkedin.com/v2/shares', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+          'Content-Type': 'application/json',
+          'X-Restli-Protocol-Version': '2.0.0'
+        },
+        body: JSON.stringify(postData)
+      })
+      .then(response => {
+        if (response.status === 201) {
+          alert('La publicación se compartió exitosamente en LinkedIn.');
+        } else {
+          alert('Hubo un error al compartir la publicación en LinkedIn.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+
+    // Agregar un evento de clic al botón
+    document.getElementById("compartirButton").addEventListener("click", compartirEnLinkedIn);
+  </script>
 </body>
 </html>
+
+
+   
+
+ 
+
