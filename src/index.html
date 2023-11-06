@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,30 @@
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
-  body:not(.nectar-no-flex-height) #ajax-content-wrap, body:not(.nectar-no-flex-height) #ajax-content-wrap .blurred-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap-inner {
+
+  body:not(.nectar-no-flex-height) #ajax-content-wrap,
+  body:not(.nectar-no-flex-height) #ajax-content-wrap .blurred-wrap,
+  body:not(.nectar-no-flex-height) .ocm-effect-wrap,
+  body:not(.nectar-no-flex-height) .ocm-effect-wrap-inner {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     font-family: 'Poppins' !important;
     background-color: black;
-}
-body {
+  }
+
+  body {
     background: black;
-}
-#ajax-content-wrap {
+  }
+
+  #ajax-content-wrap {
     background: url(https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png) no-repeat !important;
-}
-.container-wrap {
+  }
+
+  .container-wrap {
     background: transparent !important;
-}
+  }
+
   .bg {
     background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat !important;
     background-size: cover !important;
@@ -85,7 +94,7 @@ body {
   }
 
   .star-field {
-      background: black !important;
+    background: black !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -163,23 +172,25 @@ body {
 
   /* Estilos para la ventana emergente */
   .ventana-emergente {
-  display: none;
-  position: absolute;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 15px;
-  padding: 0px;
-  color: white;
-  transition: opacity 1s; /* Añade una transición de 0.5 segundos para cambiar la opacidad */
-  opacity: 0; /* Inicialmente, establece la opacidad en 0 */
-}
+    display: none;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 0px;
+    color: white;
+    transition: opacity 1s;
+    /* Añade una transición de 0.5 segundos para cambiar la opacidad */
+    opacity: 0;
+    /* Inicialmente, establece la opacidad en 0 */
+  }
 
-/* Cuando el elemento tiene la clase 'visible', se mostrará con opacidad 1 */
-.ventana-emergente.visible {
-  display: block;
-  transition: opacity 1s;
-  opacity: 1;
-}
+  /* Cuando el elemento tiene la clase 'visible', se mostrará con opacidad 1 */
+  .ventana-emergente.visible {
+    display: block;
+    transition: opacity 1s;
+    opacity: 1;
+  }
 
   .custom-button {
     display: inline-block;
@@ -200,19 +211,20 @@ body {
   .green {
     background: #66FF99;
   }
-.PersonajeM {
-display:none;
-}
-    
+
+  .PersonajeM {
+    display: none;
+  }
+
   .PersonajeD {
-  width: 100% !important;
+    width: 100% !important;
     margin-left: 0%;
     height: 100% !important;
     object-fit: cover;
     position: absolute;
     top: 35px;
     left: 0;
-    display:block;
+    display: block;
   }
 
 
@@ -243,7 +255,7 @@ display:none;
   }
 
   .persona1 {
-  margin-top: -10%;
+    margin-top: -10%;
     margin-left: 40%;
   }
 
@@ -253,7 +265,7 @@ display:none;
   }
 
   .persona3 {
-   margin-top: 19%;
+    margin-top: 19%;
     margin-left: 53%;
   }
 
@@ -263,7 +275,7 @@ display:none;
   }
 
   .persona5 {
-   margin-top: 35%;
+    margin-top: 35%;
     margin-left: 45%;
   }
 
@@ -288,17 +300,17 @@ display:none;
   }
 
   .persona10 {
-   margin-top: 25%;
+    margin-top: 25%;
     margin-left: 26%;
   }
 
   .persona11 {
-   margin-top: 33%;
+    margin-top: 33%;
     margin-left: 18%;
   }
 
   .persona12 {
-   margin-top: 25%;
+    margin-top: 25%;
     margin-left: 13%;
   }
 
@@ -318,21 +330,36 @@ display:none;
   }
 
   .persona16 {
-   margin-top: 3%;
+    margin-top: 3%;
     margin-left: 24%;
   }
 
-  #persona1, #persona2, #persona3, #persona4, #persona5, #persona6, #persona7, #persona8, #persona9, #persona10, #persona11, #persona12, #persona13, #persona14, #persona15, #persona16 {
+  #persona1,
+  #persona2,
+  #persona3,
+  #persona4,
+  #persona5,
+  #persona6,
+  #persona7,
+  #persona8,
+  #persona9,
+  #persona10,
+  #persona11,
+  #persona12,
+  #persona13,
+  #persona14,
+  #persona15,
+  #persona16 {
     margin-top: -15px;
     cursor: pointer;
   }
 
- 
+
 
 
   /*Descripcion*/
   .containerDesc {
-          text-align: left !important;
+    text-align: left !important;
     width: 100%;
     height: 100%;
     border: 1px solid white;
@@ -369,25 +396,30 @@ display:none;
     bottom: -3px !important;
     right: -3px !important;
   }
+
   h4 {
     color: white !important;
     font-family: 'Poppins';
     font-size: 22px;
     margin-top: 0px !important;
     margin-bottom: 0px;
-}
-p {
+  }
+
+  p {
     font-family: 'Poppins';
     font-size: 20px;
     margin-bottom: 5px;
-}
-.Nubes{
-    Display:block;
-}
-.NubesM{
-    Display:None;
-}
-.texto {
+  }
+
+  .Nubes {
+    Display: block;
+  }
+
+  .NubesM {
+    Display: None;
+  }
+
+  .texto {
     color: white;
     width: 23%;
     position: absolute;
@@ -396,512 +428,515 @@ p {
     font-size: 80px;
     font-family: 'Poppins';
     line-height: 90px;
-}
-.linkedin-form{
-  position: absolute;
+  }
+
+  .linkedin-form {
+    position: absolute;
     margin-top: 20%;
     z-index: 999;
     cursor: pointer;
-}
-/*Responsivo*/
+  }
+
+  /*Responsivo*/
   @media screen and (max-width: 768px) {
     #hackerLightningContainer {
+      font-family: 'Poppins' !important;
+      background-color: black;
+      font-size: 10vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .PersonajeD {
+      display: none;
+    }
+
+    .texto {
+      font-family: 'Poppins';
+      color: white;
+      width: 23%;
+      position: absolute;
+      margin-top: 20%;
+      margin-left: 10%;
+      font-size: 80px;
+    }
+
+    .PersonajeM {
+      width: 100% !important;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+
+    .persona8 {
+      margin-top: 58%;
+      margin-left: 39%;
+    }
+
+    .persona2,
+    .persona3,
+    .persona4,
+    .persona5,
+    .persona6,
+    .persona7,
+    .persona1,
+    .persona9,
+    .persona10,
+    .persona11,
+    .persona12,
+    .persona13,
+    .persona14,
+    .persona15,
+    .persona16 {
+      display: none;
+
+    }
+
+    .Nubes {
+      Display: none;
+    }
+
+    .NubesM {
+      Display: block;
+    }
+
+    .ventana-emergente.persona8.visible.black-background {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: -26% !important;
+      left: -39% !important;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+
+    .containerDesc {
+      text-align: left !important;
+      width: 100%;
+      margin-left: -120%;
+      height: 7%;
+      margin-top: -23%;
+      border: 1px solid white;
+      position: relative;
+      padding: 2px 10px 1px 10px;
+      background-color: black;
+      z-index: 0;
+    }
+
+    .texto {
+      color: white;
+      width: 73%;
+      position: absolute;
+      margin-top: 20%;
+      margin-left: 10%;
+      font-size: 30px;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+
+  /*Animacion de texto*/
+
+  .AnnaConsolato {
+    position: relative;
+    float: left;
+    background: black;
+    color: #fff;
+    font-size: 2em;
+  }
+
+  .Escribe {
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: black;
+    animation: escribir 1s steps(70);
+  }
+
+  @keyframes escribir {
+    from {
+      width: 100%
+    }
+
+    to {
+      width: 0
+    }
+  }
+
+
+
+
+  #hackerLightningContainer {
     font-family: 'Poppins' !important;
     background-color: black;
-    font-size: 10vw;
+    font-size: 3vw;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-   .PersonajeD {
-display:none;
-}
-   .texto {
-    font-family: 'Poppins';
-    color: white;
-    width: 23%;
-    position: absolute;
-    margin-top: 20%;
-    margin-left: 10%;
-    font-size: 80px;
-} 
-  .PersonajeM {
-    width: 100% !important;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display:block;
-}
-.persona8 {
-   margin-top: 58%;
-    margin-left: 39%;
-}
-.persona2, .persona3, .persona4, .persona5, .persona6, .persona7, .persona1, .persona9, .persona10, .persona11, .persona12, .persona13, .persona14, .persona15, .persona16{
-    display:none;
-    
-}
-.Nubes{
-    Display:none;
-}
-.NubesM{
-    Display:block;
-}
-
-  .ventana-emergente.persona8.visible.black-background {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: -26% !important;
-    left: -39% !important;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-}
-    .containerDesc {
-      text-align: left !important;
-    width: 100%;
-    margin-left: -120%;
-    height: 7%;
-    margin-top: -23%;
-    border: 1px solid white;
-    position: relative;
-    padding: 2px 10px 1px 10px;
-    background-color: black;
-    z-index: 0;
-}
-.texto {
-    color: white;
-    width: 73%;
-    position: absolute;
-    margin-top: 20%;
-    margin-left: 10%;
-    font-size: 30px;
-    text-align: center;
-    line-height: 30px;
-}
   }
-  /*Animacion de texto*/
 
-  .AnnaConsolato { 
-	position: relative; 
-	float: left;
-	background: black;
-	color: #fff;
-	font-size: 2em;
-}
+  #hackerLightning {
+    width: 100vw;
+    height: auto;
+    color: #fff;
+    word-break: break-all;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
 
- .Escribe {
-    position:absolute;
-    right:0;
-    width:0;
-    background: black;
-    animation: escribir 1s steps(70) ;
-}
+  #hackerLightning span {
+    display: inline-block;
+    opacity: 0;
+    color: black;
+    transition: opacity 0s ease;
+  }
 
-@keyframes escribir {
-    from { width: 100% }
-    to { width:0 }
-}
-
-
-
-
-#hackerLightningContainer{
-  font-family: 'Poppins' !important;
-  background-color: black;
-  font-size: 3vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#hackerLightning {
-  width: 100vw;
-  height: auto;
-  color: #fff;
-  word-break: break-all;
-  overflow: hidden;
-  text-transform: uppercase;
-}
-#hackerLightning span {
-  display: inline-block;
-  opacity: 0;
-  color: black;
-  transition: opacity 0s ease;
-}
-#hackerLightning span.static {
-  opacity: 1 !important;
-  color: #fff !important;
-}
+  #hackerLightning span.static {
+    opacity: 1 !important;
+    color: #fff !important;
+  }
 </style>
 
 <body>
   <!-- contenido html -->
-  
 
-<div id="star-field" class="star-field">
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
 
-  <div class="foto">
-<h1 class="texto">Las 16 súper mujeres</h1>
-<button class="linkedin-form" onclick="shareOnLinkedIn()">Compartir en LinkedIn</button>
+  <div id="star-field" class="star-field">
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
 
-<img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png">
-<img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-mobile-1-1.png">
-    <img class="PersonajeD" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-desk-1-1.png"
-      alt="Imagen a pantalla completa">
- <img class="PersonajeM" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-mobile-1.png"
-      alt="Imagen a pantalla completa">
+    <div class="foto">
+      <h1 class="texto">Las 16 súper mujeres</h1>
+      <button class="linkedin-form" onclick="shareOnLinkedIn()">Compartir en LinkedIn</button>
 
-    <!-- Punto 1 -->
-    <div class="persona1 punto pulse info-point" style="top: 40%; left: 32%;"></div>
-    <div class="ventana-emergente persona1" style="top: 29%; left: 31%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona1">ver más</p>
-      </div>
+      <img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png">
+      <img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-mobile-1-1.png">
+      <img class="PersonajeD" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-desk-1-1.png"
+        alt="Imagen a pantalla completa">
+      <img class="PersonajeM" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-mobile-1.png"
+        alt="Imagen a pantalla completa">
 
-    </div>
+      <!-- Punto 1 -->
+      <div class="persona1 punto pulse info-point" style="top: 40%; left: 32%;"></div>
+      <div class="ventana-emergente persona1" style="top: 29%; left: 31%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona1">ver más</p>
+        </div>
 
-    <!-- Punto 2 -->
-    <div class="persona2 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona2" style="top: 9%; left: 31%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona2">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 3 -->
-    <div class="persona3 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona3" style="top: 18%; left: 29%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona3">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 4 -->
-    <div class="persona4 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona4" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona4">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 5 -->
-    <div class="persona5 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona5" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona5">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 6 -->
-    <div class="persona6 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona6" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona6">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 7 -->
-    <div class="persona7 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona7" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona7">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 8 -->
-    <div class="persona8 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona8" style="top: 8%; left: 33%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4 class="AnnaConsolato">Anna Consolato<span class="Escribe">&#160;</span></h4>
-        <p class="VerMas" id="persona8">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 9 -->
-    <div class="persona9 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona9" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona9">ver más</p>
-      </div>
-    </div>
-    <!-- Punto 10 -->
-    <div class="persona10 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona10" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona10">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 3 -->
-    <div class="persona11 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona11" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona11">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 12 -->
-    <div class="persona12 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona12" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona12">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 13 -->
-    <div class="persona13 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona13" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona13">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 14 -->
-    <div class="persona14 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona14" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona14">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 3 -->
-    <div class="persona15 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona15" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona15">ver más</p>
-      </div>
-    </div>
-
-    <!-- Punto 16 -->
-    <div class="persona16 punto pulse info-point" style="top: 20%; left: 32%;"></div>
-    <div class="ventana-emergente persona16" style="top: 18%; left: 18%;">
-      <div class="containerDesc">
-        <div class="circle top-left"></div>
-        <div class="circle top-right"></div>
-        <div class="circle bottom-left"></div>
-        <div class="circle bottom-right"></div>
-        <h4>Alejandra Corona</h4>
-        <p id="persona16">ver más</p>
       </div>
 
+      <!-- Punto 2 -->
+      <div class="persona2 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona2" style="top: 9%; left: 31%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona2">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 3 -->
+      <div class="persona3 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona3" style="top: 18%; left: 29%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona3">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 4 -->
+      <div class="persona4 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona4" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona4">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 5 -->
+      <div class="persona5 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona5" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona5">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 6 -->
+      <div class="persona6 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona6" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona6">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 7 -->
+      <div class="persona7 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona7" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona7">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 8 -->
+      <div class="persona8 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona8" style="top: 8%; left: 33%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4 class="AnnaConsolato">Anna Consolato<span class="Escribe">&#160;</span></h4>
+          <p class="VerMas" id="persona8">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 9 -->
+      <div class="persona9 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona9" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona9">ver más</p>
+        </div>
+      </div>
+      <!-- Punto 10 -->
+      <div class="persona10 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona10" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona10">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 3 -->
+      <div class="persona11 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona11" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona11">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 12 -->
+      <div class="persona12 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona12" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona12">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 13 -->
+      <div class="persona13 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona13" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona13">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 14 -->
+      <div class="persona14 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona14" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona14">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 3 -->
+      <div class="persona15 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona15" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona15">ver más</p>
+        </div>
+      </div>
+
+      <!-- Punto 16 -->
+      <div class="persona16 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+      <div class="ventana-emergente persona16" style="top: 18%; left: 18%;">
+        <div class="containerDesc">
+          <div class="circle top-left"></div>
+          <div class="circle top-right"></div>
+          <div class="circle bottom-left"></div>
+          <div class="circle bottom-right"></div>
+          <h4>Alejandra Corona</h4>
+          <p id="persona16">ver más</p>
+        </div>
+
+      </div>
     </div>
+
+
+    <!-- Loader -->
+    <!--<div class="loader" id="loader"><img src="https://mescalina.mx/wp-content/uploads/2023/10/loader.gif" alt=""></div>-->
   </div>
 
+  <div id="hackerLightningContainer">
+    <div id="hackerLightning" onclick="animateBolts()">
+      <div></div>
 
-  <!-- Loader -->
-  <!--<div class="loader" id="loader"><img src="https://mescalina.mx/wp-content/uploads/2023/10/loader.gif" alt=""></div>-->
-  </div>
+      <script>
 
-  <div id="hackerLightningContainer"><div id="hackerLightning" onclick="animateBolts()"><div></div>
+        /*inicia share*/
+           // Función para compartir en LinkedIn con un token de acceso
+    function shareOnLinkedIn() {
+      
+      // Datos de la publicación
+ var postData = {
+   comment: 'Texto del comentario',
+   content: {
+     title: 'Título de la publicación',
+     description: 'Descripción de la publicación',
+     submittedUrl: 'https://mescalina.mx/',
+     submittedImageUrl: 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png'
+   }
+ };
+ 
+ // Token de acceso (reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real)
+ var accessToken = 'AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA';
+ 
+ 
+ // Realiza una llamada a la API de LinkedIn para compartir la publicación
+ fetch('https://api.linkedin.com/v2/shares', {
   
-  <script>
+   
+   method: 'POST',
+   mode: 'no-cors',
+   headers: {
+     'Authorization': 'Bearer ' + accessToken,
+     'Content-Type': 'application/json',
+     'x-li-format': 'json'
+   },
+   body: JSON.stringify(postData)
+ })
+ .then(response => {
+  if (response.ok) { // Cambio: Verifica si la respuesta es exitosa
+     alert('La publicación se compartió exitosamente en LinkedIn.');
+   } else {
+     alert('Hubo un error al compartir la publicación en LinkedIn.');
+   }
+ })
+ .catch(error => {
+   console.error('Error:', error);
+ });
+ 
+     }
+        /*termina share*/
+        /*
+            function redirectToPage(url) {
+              document.getElementById('hackerLightning').style.display = 'block';
+              setTimeout(function () {
+                window.location.href = url;
+              }, 2000);
+            }*/
 
-    /*inicia share*/
-    
-            function shareOnLinkedIn() {
-            // Descripción y URL de la imagen fijas.
-            const description = "Descripción leading women 2023";
-            const imageUrl = "https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png";
-    
-            // Credenciales de la aplicación de LinkedIn (obtenidas del portal de desarrolladores de LinkedIn).
-            const clientId = '863pfg2m0rhwqb';
-            const clientSecret = 'kcauWKkZIbi8Gm8p';
-            
-            // Codifica las credenciales en base64 manualmente.
-            const authString = `${clientId}:${clientSecret}`;
-            const base64 = btoa(authString);
-            const authHeader = `Basic ${base64}`;
-    
-            fetch('https://www.linkedin.com/oauth/v2/accessToken', {
-                method: 'POST',
-                headers: {
-                    'Authorization': authHeader,
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: 'grant_type=client_credentials'
-            })
-            .then(response => response.json())
-            .then(data => {
-                const accessToken = data.access_token;
-    
-                // Publica en LinkedIn utilizando la descripción y la URL de la imagen fijas.
-                fetch('https://api.linkedin.com/v2/ugcPosts', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${accessToken}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        author: `urn:li:organization:${clientId}`,
-                        lifecycleState: 'PUBLISHED',
-                        specificContent: {
-                            'com.linkedin.ugc.ShareContent': {
-                                shareCommentary: {
-                                    text: description
-                                },
-                                shareMediaCategory: 'IMAGE',
-                                media: [
-                                    {
-                                        status: 'READY',
-                                        description: {
-                                            text: 'Descripción de la imagen'
-                                        },
-                                        media: imageUrl
-                                    }
-                                ]
-                            }
-                        },
-                        visibility: {
-                            'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'
-                        }
-                    })
-                })
-                .then(response => {
-                    if (response.status === 201) {
-                        alert('Contenido compartido en LinkedIn con éxito.');
-                    } else {
-                        alert('Hubo un error al compartir en LinkedIn.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error al publicar en LinkedIn: ' + error);
-                });
-            })
-            .catch(error => {
-                console.error('Error de autenticación con LinkedIn: ' + error);
-            });
-        }
-
-/*termina share*/
-    /*
+        // Función para mostrar el loader y redirigir después de 2 segundos
         function redirectToPage(url) {
-          document.getElementById('hackerLightning').style.display = 'block';
+          document.getElementById('hackerLightning').style.display = 'block'; // Mostrar la animación
+          document.getElementById('star-field').style.display = 'none';
+          animateBolts(); // Iniciar la animación de rayos
+
           setTimeout(function () {
-            window.location.href = url;
-          }, 2000);
-        }*/
-       
-  // Función para mostrar el loader y redirigir después de 2 segundos
-  function redirectToPage(url) {
-    document.getElementById('hackerLightning').style.display = 'block'; // Mostrar la animación
-    document.getElementById('star-field').style.display = 'none';
-    animateBolts(); // Iniciar la animación de rayos
-
-    setTimeout(function () {
-      window.location.href = url; // Redirigir después de 2 segundos
-    }, 1000);
-  }
-
-
-          /* Agregar interacción con JavaScript */
-    const puntos = document.querySelectorAll('.punto');
-    const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
-
-    puntos.forEach((punto, index) => {
-      let visible = false; // Variable para rastrear el estado de la ventana emergente
-
-      punto.addEventListener('click', () => {
-        if (visible) {
-          ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente
-          // Ocultar el elemento cambiando el estilo 'display' a 'none'
-
-        } else {
-          ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
-          ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
-          ventanasEmergentes[index].classList.add('visible');
+            window.location.href = url; // Redirigir después de 2 segundos
+          }, 1000);
         }
 
-        visible = !visible; // Cambiar el estado del visible para la próxima vez
+
+        /* Agregar interacción con JavaScript */
+        const puntos = document.querySelectorAll('.punto');
+        const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
+
+        puntos.forEach((punto, index) => {
+          let visible = false; // Variable para rastrear el estado de la ventana emergente
+
+          punto.addEventListener('click', () => {
+            if (visible) {
+              ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente
+              // Ocultar el elemento cambiando el estilo 'display' a 'none'
+
+            } else {
+              ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
+              ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
+              ventanasEmergentes[index].classList.add('visible');
+            }
+
+            visible = !visible; // Cambiar el estado del visible para la próxima vez
 
 
-      });
+          });
 
 
-    });
-    
+        });
+
         // Asigna un evento de clic a cada punto de información
         document.getElementById('persona1').addEventListener('click', function () {
           redirectToPage('https://mescalina.mx/alejandracorona/');
         });
-    
+
         document.getElementById('persona2').addEventListener('click', function () {
           redirectToPage('pagina2.html');
         });
-    
+
         document.getElementById('persona3').addEventListener('click', function () {
           redirectToPage('pagina3.html');
         });
@@ -944,130 +979,131 @@ display:none;
         document.getElementById('persona16').addEventListener('click', function () {
           redirectToPage('pagina16.html');
         });
-    
-    
+
+
         /* Loader*/
         const DICTIONARY = "0123456789qwertyuiopasdfghjklzxcvbnmdewknewcnweVNKEWNFWEnrfsjenfeknkfnwekrnfrenafknreafgnoeragferbbjkbjbnjnjnjbhvgvgvbxhasbxhsbxhasxlHSBXBSCXBASHB".split('');
-const LETTER_TOTAL = 806;
-const CENTER_WORD = '';
-const CW_START = LETTER_TOTAL/2 - CENTER_WORD.length/2;
-const CW_END = CW_START + CENTER_WORD.length;
-const ROW_LENGTH = 65;
+        const LETTER_TOTAL = 806;
+        const CENTER_WORD = '';
+        const CW_START = LETTER_TOTAL / 2 - CENTER_WORD.length / 2;
+        const CW_END = CW_START + CENTER_WORD.length;
+        const ROW_LENGTH = 65;
 
-var getBoltStartingPositions = function() {
-  var results = [];
-  results.push(CW_START);
-  results.push(CW_END + 1);
-  for(var i = CW_START; i < CW_END + 1; i++) {
-    var top = i - ROW_LENGTH;
-    var bottom = i + ROW_LENGTH+1;
-    results.push(top, bottom);
-  }
-  return results;
-}
+        var getBoltStartingPositions = function () {
+          var results = [];
+          results.push(CW_START);
+          results.push(CW_END + 1);
+          for (var i = CW_START; i < CW_END + 1; i++) {
+            var top = i - ROW_LENGTH;
+            var bottom = i + ROW_LENGTH + 1;
+            results.push(top, bottom);
+          }
+          return results;
+        }
 
-const STARTING_POSITIONS = getBoltStartingPositions();
+        const STARTING_POSITIONS = getBoltStartingPositions();
 
-var el = document.getElementById('hackerLightning');
+        var el = document.getElementById('hackerLightning');
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-var genRanChar = function() {
- var index = Math.floor(Math.random() * DICTIONARY.length);
-  return DICTIONARY[index];
-}
+        var genRanChar = function () {
+          var index = Math.floor(Math.random() * DICTIONARY.length);
+          return DICTIONARY[index];
+        }
 
-var genRanString = function(amt) {
-  var string = ``;
-  var wordIndex = 0;
-  for(var i = 0; i < amt; i++) {
-    if(i >= CW_START && i < CW_END) {
-      string += `<span class="static">${CENTER_WORD[wordIndex]}</span>`;
-      wordIndex++;
-    }
-    else {
-      string += `<span>${genRanChar()}</span>`;
-    }
-  }
-  return string;
-}
+        var genRanString = function (amt) {
+          var string = ``;
+          var wordIndex = 0;
+          for (var i = 0; i < amt; i++) {
+            if (i >= CW_START && i < CW_END) {
+              string += `<span class="static">${CENTER_WORD[wordIndex]}</span>`;
+              wordIndex++;
+            }
+            else {
+              string += `<span>${genRanChar()}</span>`;
+            }
+          }
+          return string;
+        }
 
-function pickRandomProperty(obj) {
-    var result;
-    var count = 0;
-    for (var prop in obj)
-        if (Math.random() < 1/++count)
-           result = prop;
-    return result;
-}
+        function pickRandomProperty(obj) {
+          var result;
+          var count = 0;
+          for (var prop in obj)
+            if (Math.random() < 1 / ++count)
+              result = prop;
+          return result;
+        }
 
-var Bolt = function() {
-  this.position = STARTING_POSITIONS[getRandomIntInclusive(0, STARTING_POSITIONS.length)];
-  this.lastDirection = '';
-  this.moves = {
-    left: -1,
-    right: 1,
-    up: -ROW_LENGTH,
-    down: ROW_LENGTH
-  }
-  this.move = function() {
-    var direction = pickRandomProperty(this.moves);
-    while(direction === this.lastDirection) {
-      direction = pickRandomProperty(this.moves);
-    }
-    this.lastDirection = direction;
-    var move = this.moves[direction];
-    var current = document.querySelector(`#hackerLightning span:nth-child(${this.position})`);
-    var next = document.querySelector(`#hackerLightning span:nth-child(${this.position += move})`);
-    if(next) {
-      current.style.opacity = 1;
-      current.style.color = 'black';
-      next.style.opacity = 1;
-      next.style.color = '#fff';
-    }
-    else {
-      current.style.opacity = 1;
-      current.style.color = 'black';
-      return false;
-    }
-  }
-  this.strike = function() {
-    var self = this;
-    var animate = setInterval(function() {
-      var move = self.move();
-      if(move === false) {
-        clearInterval(animate);
-      }
-    }, 16);
-  }
-}
+        var Bolt = function () {
+          this.position = STARTING_POSITIONS[getRandomIntInclusive(0, STARTING_POSITIONS.length)];
+          this.lastDirection = '';
+          this.moves = {
+            left: -1,
+            right: 1,
+            up: -ROW_LENGTH,
+            down: ROW_LENGTH
+          }
+          this.move = function () {
+            var direction = pickRandomProperty(this.moves);
+            while (direction === this.lastDirection) {
+              direction = pickRandomProperty(this.moves);
+            }
+            this.lastDirection = direction;
+            var move = this.moves[direction];
+            var current = document.querySelector(`#hackerLightning span:nth-child(${this.position})`);
+            var next = document.querySelector(`#hackerLightning span:nth-child(${this.position += move})`);
+            if (next) {
+              current.style.opacity = 1;
+              current.style.color = 'black';
+              next.style.opacity = 1;
+              next.style.color = '#fff';
+            }
+            else {
+              current.style.opacity = 1;
+              current.style.color = 'black';
+              return false;
+            }
+          }
+          this.strike = function () {
+            var self = this;
+            var animate = setInterval(function () {
+              var move = self.move();
+              if (move === false) {
+                clearInterval(animate);
+              }
+            }, 16);
+          }
+        }
 
-el.innerHTML = genRanString(LETTER_TOTAL);
+        el.innerHTML = genRanString(LETTER_TOTAL);
 
-var genBolts = function(amt) {
-  var results = [];
-  for(var i = 0; i < amt; i++) {
-    results.push(new Bolt());
-  }
-  return results;
-}
+        var genBolts = function (amt) {
+          var results = [];
+          for (var i = 0; i < amt; i++) {
+            results.push(new Bolt());
+          }
+          return results;
+        }
 
-function animateBolts() {
-  var bolts = genBolts(20);
-  for (var i = 0; i < bolts.length; i++) {
-    bolts[i].strike();
-  }
-}
+        function animateBolts() {
+          var bolts = genBolts(20);
+          for (var i = 0; i < bolts.length; i++) {
+            bolts[i].strike();
+          }
+        }
 
-setInterval(animateBolts, 100);
-
-       
+        setInterval(animateBolts, 100);
 
 
-     </script>
+
+
+      </script>
 </body>
+
 </html>
