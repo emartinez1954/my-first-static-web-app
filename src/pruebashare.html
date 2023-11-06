@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta property="og:title" content="Título de la publicación" />
+  <meta property="og:description" content="Descripción de la publicación" />
+  <meta property="og:url" content="https://mescalina.mx/" />
+  <meta property="og:image" content="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png" />
   <title>Compartir en LinkedIn con Token de Acceso</title>
 </head>
 <body>
   <button id="compartirButton">Compartir en LinkedIn</button>
 
   <script>
-    // Función para compartir en LinkedIn con un token de acceso
-    function compartirEnLinkedIn() {
-      // Reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real
-      var accessToken = 'AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA';
-
-      // Datos de la publicación
-      var postData = {
-        comment: 'Texto del comentario',
-        content: {
-          title: 'Título de la publicación',
-          description: 'Descripción de la publicación',
-          submittedUrl: 'https://mescalina.mx/',
-          submittedImageUrl: 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png'
-        }
-      };
-
-      // Realiza una llamada a la API de LinkedIn para compartir la publicación
-      fetch('https://api.linkedin.com/v2/shares', {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + accessToken,
-          'Content-Type': 'application/json',
-          'X-Restli-Protocol-Version': '2.0.0'
-        },
-        body: JSON.stringify(postData)
-      })
-      .then(response => {
-        if (response.status === 201) {
-          alert('La publicación se compartió exitosamente en LinkedIn.');
-        } else {
-          alert('Hubo un error al compartir la publicación en LinkedIn.');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+   /*
+    function shareOnLinkedIn() {
+ 
+  var postData = {
+    comment: 'Texto del comentario',
+    content: {
+      title: 'Descubre las 16 Súper Mujeres',
+      description: 'Leading Women 2023',
+      submittedUrl: 'https://mescalina.mx/',
+      submittedImageUrl: 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png' 
     }
+  };
 
-    // Agregar un evento de clic al botón
-    document.getElementById("compartirButton").addEventListener("click", compartirEnLinkedIn);
+  var accessToken = 'AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA';
+
+  var clientId = '863pfg2m0rhwqb';
+  var clientSecret = 'kcauWKkZIbi8Gm8p';
+
+  var body = JSON.stringify(postData);
+
+  fetch('https://api.linkedin.com/v2/shares', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Authorization': 'Bearer ' + accessToken,
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0'
+    },
+    body: body
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('La publicación se compartió exitosamente en LinkedIn.');
+    } else {
+      alert('Hubo un error al compartir la publicación en LinkedIn.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}*/
+ // Reemplaza esta URL con la que deseas compartir
+ var shareURL = "https://mango-smoke-0d2d9f710.4.azurestaticapps.net/";
+  
+  // Función para abrir la ventana emergente de compartir en LinkedIn
+  function shareOnLinkedIn() {
+var url = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent("https://mango-smoke-0d2d9f710.4.azurestaticapps.net/");
+
+      window.open(url, "_blank", "width=600,height=400");
+  }
+
+  // Asigna la función al botón
+  document.getElementById('compartirButton').addEventListener('click', shareOnLinkedIn);
+
+
+
   </script>
 </body>
 </html>
-
-
-   
-
- 
-
