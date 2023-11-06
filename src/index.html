@@ -397,6 +397,12 @@ p {
     font-family: 'Poppins';
     line-height: 90px;
 }
+.linkedin-form{
+  position: absolute;
+    margin-top: 20%;
+    z-index: 999;
+    cursor: pointer;
+}
 /*Responsivo*/
   @media screen and (max-width: 768px) {
     #hackerLightningContainer {
@@ -541,6 +547,8 @@ display:none;
 
   <div class="foto">
 <h1 class="texto">Las 16 súper mujeres</h1>
+<button class="linkedin-form" onclick="shareOnLinkedIn()">Compartir en LinkedIn</button>
+
 <img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png">
 <img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/fondo-mobile-1-1.png">
     <img class="PersonajeD" src="https://mescalina.mx/wp-content/uploads/2023/11/mujeres-desk-1-1.png"
@@ -752,6 +760,8 @@ display:none;
 
     </div>
   </div>
+
+
   <!-- Loader -->
   <!--<div class="loader" id="loader"><img src="https://mescalina.mx/wp-content/uploads/2023/10/loader.gif" alt=""></div>-->
   </div>
@@ -759,6 +769,84 @@ display:none;
   <div id="hackerLightningContainer"><div id="hackerLightning" onclick="animateBolts()"><div></div>
   
   <script>
+
+    /*inicia share*/
+    
+            function shareOnLinkedIn() {
+            // Descripción y URL de la imagen fijas.
+            const description = "Descripción leading women 2023";
+            const imageUrl = "https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png";
+    
+            // Credenciales de la aplicación de LinkedIn (obtenidas del portal de desarrolladores de LinkedIn).
+            const clientId = '863pfg2m0rhwqb';
+            const clientSecret = 'kcauWKkZIbi8Gm8p';
+            
+            // Codifica las credenciales en base64 manualmente.
+            const authString = `${clientId}:${clientSecret}`;
+            const base64 = btoa(authString);
+            const authHeader = `Basic ${base64}`;
+    
+            fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+                method: 'POST',
+                headers: {
+                    'Authorization': authHeader,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'grant_type=client_credentials'
+            })
+            .then(response => response.json())
+            .then(data => {
+                const accessToken = data.access_token;
+    
+                // Publica en LinkedIn utilizando la descripción y la URL de la imagen fijas.
+                fetch('https://api.linkedin.com/v2/ugcPosts', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        author: `urn:li:organization:${clientId}`,
+                        lifecycleState: 'PUBLISHED',
+                        specificContent: {
+                            'com.linkedin.ugc.ShareContent': {
+                                shareCommentary: {
+                                    text: description
+                                },
+                                shareMediaCategory: 'IMAGE',
+                                media: [
+                                    {
+                                        status: 'READY',
+                                        description: {
+                                            text: 'Descripción de la imagen'
+                                        },
+                                        media: imageUrl
+                                    }
+                                ]
+                            }
+                        },
+                        visibility: {
+                            'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'
+                        }
+                    })
+                })
+                .then(response => {
+                    if (response.status === 201) {
+                        alert('Contenido compartido en LinkedIn con éxito.');
+                    } else {
+                        alert('Hubo un error al compartir en LinkedIn.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al publicar en LinkedIn: ' + error);
+                });
+            })
+            .catch(error => {
+                console.error('Error de autenticación con LinkedIn: ' + error);
+            });
+        }
+
+/*termina share*/
     /*
         function redirectToPage(url) {
           document.getElementById('hackerLightning').style.display = 'block';
