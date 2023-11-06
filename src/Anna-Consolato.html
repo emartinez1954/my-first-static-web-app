@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png">
+  <meta name="theme-color" content="#ffffff">
+  <title>Anna Consolato</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+    body:not(.nectar-no-flex-height) #ajax-content-wrap, body:not(.nectar-no-flex-height) #ajax-content-wrap .blurred-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap, body:not(.nectar-no-flex-height) .ocm-effect-wrap-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-family: 'Poppins' !important;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+#ajax-content-wrap {
+    background: url(https://mescalina.mx/wp-content/uploads/2023/11/fondo-desk-1-1.png) no-repeat !important;
+}
+#linkedin-share-button {
+    position: absolute;
+    margin-top: 45%;
+    margin-left: 94%;
+}
+.Share{
+ width:55% !important;   
+}
+
+.container-wrap {
+    background: transparent !important;
+}
+  .bg {
+    background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat !important;
+    background-size: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -3 !important;
+    margin-top: 50%;
+  }
+
+  .bg:before {
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: #000 !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    opacity: 0.3 !important;
+    z-index: -3 !important;
+  }
+
+  
+
+  /*Estilos leading*/
+  /* Estilos CSS para los puntos de información */
+  .info-point {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+  }
+
+  /* Estilos CSS para el loader */
+  .loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 999;
+    text-align: center;
+    padding-top: 20%;
+  }
+
+  /* Estilos para los puntos interactivos */
+  .punto {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+  }
+
+  /* Estilos para la ventana emergente */
+  .ventana-emergente {
+  display: none;
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 0px;
+  color: white;
+  transition: opacity 1s; /* Añade una transición de 0.5 segundos para cambiar la opacidad */
+  opacity: 0; /* Inicialmente, establece la opacidad en 0 */
+}
+
+/* Cuando el elemento tiene la clase 'visible', se mostrará con opacidad 1 */
+.ventana-emergente.visible {
+  display: block;
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+  .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Cambiar el estilo al pasar el mouse por encima */
+  .custom-button:hover {
+    background-color: #297fb8;
+  }
+
+  .green {
+    background: #66FF99;
+  }
+.PersonajeM {
+display:none;
+}
+    
+  .PersonajeD {
+  width: 100% !important;
+    margin-left: 0%;
+    height: 100% !important;
+    object-fit: cover;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display:block;
+  }
+
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+  }
+
+  .pulse {
+    animation: pulse-animation 2s infinite;
+    background-color: white;
+  }
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(252, 252, 252, 0.2);
+    }
+
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+  }
+
+  h5 {
+    color: white !important;
+  }
+
+  .persona1 {
+  margin-top: -10%;
+    margin-left: -20%;
+  }
+
+  .persona2 {
+    margin-top: 7%;
+    margin-left: 30%;
+  }
+
+  .persona3 {
+  margin-top: 19%;
+    margin-left: 20%;
+  }
+
+  .persona4 {
+    margin-top: 30%;
+    margin-left: 38%;
+  }
+
+  .persona5 {
+ margin-top: 28%;
+    margin-left: -10%;
+  }
+
+  
+
+  #persona1, #persona2, #persona3, #persona4, #persona5, #persona6, #persona7, #persona8, #persona9, #persona10, #persona11, #persona12, #persona13, #persona14, #persona15, #persona16 {
+    margin-top: -15px;
+    cursor: pointer;
+  }
+
+ 
+
+
+  /*Descripcion*/
+  .containerDesc {
+          text-align: left !important;
+    width: 70%;
+    height: 100%;
+    border: 1px solid white;
+    position: relative;
+    padding: 0px 10px 0px 10px;
+    background-color: black;
+  }
+
+
+  .circle {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .top-left {
+    top: -3px;
+    left: -3px;
+  }
+
+  .top-right {
+    top: -3px;
+    right: -3px;
+  }
+
+  .bottom-left {
+    bottom: -3px !important;
+    left: -3px !important;
+  }
+
+  .bottom-right {
+    bottom: -3px !important;
+    right: -3px !important;
+  }
+  h4 {
+    color: white !important;
+    font-size: 20px;
+    font-family: 'Poppins' !important;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.Nubes{
+    Display:block;
+    width: 100%;
+}
+.NubesM{
+    Display:None;
+}
+.texto {
+    color: white;
+    width: 23%;
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 80px;
+    font-family: 'Poppins' !important;
+}
+/*Responsivo*/
+  @media screen and (max-width: 768px) {
+    body {
+    padding: 0;
+    margin: 0;
+}
+   .PersonajeD {
+display:none;
+}
+    
+  .PersonajeM {
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:block;
+}
+.persona1 {
+    margin-top: 0%;
+    margin-left: 58%;
+}
+.persona2 {
+    margin-top: 50%;
+    margin-left: 58%;
+}
+.persona3 {
+    margin-top: 65%;
+    margin-left: 58%;
+}
+.persona4 {
+    margin-top: 80%;
+    margin-left: 58%;
+}
+.persona5 {
+    margin-top: 95%;
+    margin-left: 58%;
+}
+
+.Nubes{
+    Display:none;
+}
+.NubesM{
+    Display:block;
+    margin-top: 1%;
+        z-index: -4;
+        width: 100%;
+
+}
+
+ 
+.containerDesc {
+      text-align: left !important;
+    width: 100%;
+    margin-left: -120%;
+    height: 7%;
+    margin-top: -23%;
+    border: 1px solid white;
+    position: relative;
+    padding: 2px 10px 1px 10px;
+    background-color: black;
+    z-index: 0;
+}
+.texto {
+    color: white;
+    width: 73%;
+    position: absolute;
+    margin-top: 150%;
+    margin-left: -10%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Poppins' !important;
+}
+
+.ventana-emergente {
+  top: 18% !important;
+    left: 35% !important;
+    width: 70%;
+}
+.ventana-emergente.persona4.visible {
+    margin-top: 73%;
+}
+.ventana-emergente.persona3.visible {
+    margin-top: 58% !important;
+}
+.ventana-emergente.persona3.visible {
+    margin-top: 48%;
+}
+.ventana-emergente.persona1 {
+    margin-left: 60% !important;
+}
+.ventana-emergente.persona1.visible {
+    margin-top: 39%;
+    margin-left: 59% !important;
+}
+#linkedin-share-button {
+    position: absolute;
+    margin-top: 145%;
+    margin-left: 85%;
+}
+.Share {
+    width: 95% !important;
+}
+  }
+
+  .Descripciones { 
+	position: relative; 
+	float: left;
+	background: black;
+	color: #fff;
+	font-size: 2em;
+}
+
+ .Escribe {
+    position:absolute;
+    right:0;
+    width:0;
+    background: black;
+    animation: escribir 1s steps(60) ;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+  </style>
+</head>
+<body>
+  <!-- contenido html -->
+
+
+<div class="star-field">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+
+  <div class="foto">
+  <a id="linkedin-share-button"><img class="Share" src="https://mescalina.mx/wp-content/uploads/2023/10/share.png"></a>
+<h1 class="texto">Anna Consolato</h1>
+<img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/DESKTOP.png">
+<img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png">
+
+
+    <!-- Punto 1 -->
+    <div class="persona1 punto pulse info-point" style="top: 40%; left: 32%;"></div>
+    <div class="ventana-emergente persona1" style="top:29%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">Amante de la fotografía y los deportes<span class="Escribe">&#160;</span></h4>
+      </div>
+    </div>
+
+
+    <!-- Punto 2 -->
+    <div class="persona2 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona2" style="top: 9%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">Se graduó como nutricionista<span class="Escribe">&#160;</span></h4>
+      </div>
+    </div>
+
+    <!-- Punto 3 -->
+    <div class="persona3 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona3" style="top: 9%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">Frase de cabecera: "Siempre se vale preguntar"<span class="Escribe">&#160;</span></h4>
+      </div>
+    </div>
+    <!-- Punto 4 -->
+    <div class="persona4 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona4" style="top: 5%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">Vivió en varios países entre ellos México, Venezuela y Colombia<span class="Escribe">&#160;</span></h4>
+      </div>
+    </div>
+    <!-- Punto 5 -->
+    <div class="persona5 punto pulse info-point" style="top: 20%; left: 32%;"></div>
+    <div class="ventana-emergente persona5" style="top: 22%; left: 33%;">
+      <div class="containerDesc">
+        <div class="circle top-left"></div>
+        <div class="circle top-right"></div>
+        <div class="circle bottom-left"></div>
+        <div class="circle bottom-right"></div>
+        <h4 class="AnnaConsolato">La navidad es una época importante para ella<span class="Escribe">&#160;</span></h4>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+         
+    /* Agregar interacción con JavaScript */
+const puntos = document.querySelectorAll('.punto');
+const ventanasEmergentes = document.querySelectorAll('.ventana-emergente');
+
+puntos.forEach((punto, index) => {
+  punto.addEventListener('mouseover', () => {
+    ventanasEmergentes[index].style.display = 'block'; // Mostrar la ventana emergente
+    ventanasEmergentes.forEach(ventana => ventana.classList.remove('visible')); // Oculta todas las ventanas emergentes
+    ventanasEmergentes[index].classList.add('visible');
+  });
+
+  punto.addEventListener('mouseout', () => {
+    ventanasEmergentes[index].style.display = 'none'; // Ocultar la ventana emergente cuando el cursor se mueve fuera
+  });
+});
+
+  
+   // Reemplaza esta URL con la que deseas compartir
+          var shareURL = "https://mescalina.mx/leadingwomen23/";
+  
+          // Función para abrir la ventana emergente de compartir en LinkedIn
+          function shareOnLinkedIn() {
+        var url = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent("https://mescalina.mx/leadingwomen23/");
+  
+              window.open(url, "_blank", "width=600,height=400");
+          }
+  
+          // Asigna la función al botón
+          document.getElementById("linkedin-share-button").addEventListener("click", shareOnLinkedIn);
+  </script>
+</body>
+</html>
