@@ -857,17 +857,19 @@
  
  
  // Realiza una llamada a la API de LinkedIn para compartir la publicación
- fetch('https://api.linkedin.com/v2/shares', {
-  
-   
-   method: 'POST',
-   mode: 'no-cors',
-   headers: {
-     'Authorization': 'Bearer ' + accessToken,
-     'Content-Type': 'application/json',
-     'x-li-format': 'json'
-   },
-   body: JSON.stringify(postData)
+ // Configura las credenciales de tu aplicación (Client ID y Client Secret)
+const clientId = '863pfg2m0rhwqb';
+const clientSecret = 'kcauWKkZIbi8Gm8p';
+
+// Realiza una solicitud para intercambiar un código de autorización por un token de acceso
+fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: `grant_type=authorization_code&code=AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA&redirect_uri=https://www.linkedin.com/developers/tools/oauth/redirect&client_id=${clientId}&client_secret=${clientSecret}`,
+
  })
  .then(response => {
   if (response.ok) { // Cambio: Verifica si la respuesta es exitosa
