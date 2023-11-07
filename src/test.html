@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leading women 2023</title>
+  <meta property="og:title" content="Título de la publicación" />
+  <meta property="og:description" content="Descripción de la publicación" />
+  <meta property="og:url" content="https://mescalina.mx/" />
+  <meta property="og:image" content="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png" />
+</head>
+
+<body>
+  <button onclick="Perfil()">Perfil</button>
+  <button onclick="shareOnLinkedIn()">Linkedin</button>
+
+
+</body>
+
+</html>
+
+<script>
+
+  /*inicia share*/
+  // Función para compartir en LinkedIn con un token de acceso
+  function shareOnLinkedIn() {
+
+    // Datos de la publicación
+    var postData = {
+      'author': 'urn:li:person:1f1Ll27k4H',
+      'lifecycleState': 'PUBLISHED',
+      'specificContent': {
+        'com.linkedin.ugc.ShareContent': {
+          'shareCommentary': {
+            'text': 'Hello World! This is my first Share on LinkedIn!'
+          },
+          'shareMediaCategory': 'NONE'
+        }
+      },
+      'visibility': {
+        'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'
+      }
+    };
+
+    // Token de acceso (reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real)
+    var accessToken = 'AQUGo9nLFlOKCsgC7eWlyqm29wXZ6FXr3_11GKktAQ4LdyUbSLBquiL7MYCpD0J7iUtzegE-zo2ZpRAaSXPrI08BdIQmdIFtaJkfgmcVIo35-cYmM7bNQIAmTbeXFfm04TN1ZtTdyAtx1sXMw-zsVBQcIMT8qJnuFDtvl0zdXKuGzVHXZ0w20MvFR66yE46Y9xb_I0ZQTBAPKDT6regSzFLWtUrEetGOrKVo8pY9tMm5cJEWZkBBHwwtf53KbAmbfjuXqauVo2l8lNNl-1btGRc96fI3O_R0u8Xd8-KfsEMnXFYdnRpOpCvk-Z9gq7ohdMKzlh42MRnPSG6ykMay1WMINIq4bA';
+
+
+    // Realiza una llamada a la API de LinkedIn para compartir la publicación
+    // Configura las credenciales de tu aplicación (Client ID y Client Secret)
+    const headers = new Headers({
+      'Authorization': 'Bearer ' + accessToken,
+      'Content-Type': 'application/json',
+      'X-Restli-Protocol-Version': '2.0.0',
+    });
+    // Realiza una solicitud para intercambiar un código de autorización por un token de acceso
+    fetch('https://api.linkedin.com/v2/ugcPosts', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken,
+        'Content-Type': 'application/json',
+        'X-Restli-Protocol-Version': '2.0.0',
+      },
+      body: JSON.stringify(postData),
+
+    })
+      .then(response => {
+        if (response.ok) { // Cambio: Verifica si la respuesta es exitosa
+          alert('La publicación se compartió exitosamente en LinkedIn.');
+        } else {
+          console.log(response);
+          alert('Hubo un error al compartir la publicación en LinkedIn.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+  }
+  /*termina share*/
+
+  function Perfil() {
+
+    // Token de acceso (reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real)
+    var accessToken = 'AQUGo9nLFlOKCsgC7eWlyqm29wXZ6FXr3_11GKktAQ4LdyUbSLBquiL7MYCpD0J7iUtzegE-zo2ZpRAaSXPrI08BdIQmdIFtaJkfgmcVIo35-cYmM7bNQIAmTbeXFfm04TN1ZtTdyAtx1sXMw-zsVBQcIMT8qJnuFDtvl0zdXKuGzVHXZ0w20MvFR66yE46Y9xb_I0ZQTBAPKDT6regSzFLWtUrEetGOrKVo8pY9tMm5cJEWZkBBHwwtf53KbAmbfjuXqauVo2l8lNNl-1btGRc96fI3O_R0u8Xd8-KfsEMnXFYdnRpOpCvk-Z9gq7ohdMKzlh42MRnPSG6ykMay1WMINIq4bA';
+
+    fetch('https://api.linkedin.com/v2/userinfo', {
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken,
+        'Content-Type': 'application/json'
+      }
+
+    })
+      .then(response => {
+        if (response.ok) { // Cambio: Verifica si la respuesta es exitosa
+          alert('La publicación se compartió exitosamente.');
+        } else {
+          console.log(response);
+          alert('Hubo un error al compartir la publicación.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+
+
+  }
+</script>
