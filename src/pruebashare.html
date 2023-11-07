@@ -1,73 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Autenticación de LinkedIn</title>
+    <title>Compartir en LinkedIn</title>
 </head>
 <body>
-  <button id="linkedinAuthButton">Iniciar sesión con LinkedIn</button>
+    <button onclick="compartirEnLinkedIn()">Compartir en LinkedIn</button>
 
-  <script>
-    var clientId = '7770w4fndtbib0'; // Reemplaza con tu Client ID
-    var redirectUri = 'https://mango-smoke-0d2d9f710.4.azurestaticapps.net/linkedin-auth-callback'; // Reemplaza con tu URL de redirección
-
-    // Función para redirigir al usuario a la página de autenticación de LinkedIn
-    function redirectToLinkedInAuthentication() {
-      var state = 'Published'; // Puedes generar un valor aleatorio
-      var scope = 'r_liteprofile r_emailaddress'; // Ámbito de permisos
-
-      // URL de autenticación de LinkedIn
-      var authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
-
-      window.location.href = authUrl;
-    }
-
-    document.getElementById('linkedinAuthButton').addEventListener('click', function() {
-      // Redirige al usuario a la página de autenticación de LinkedIn
-      redirectToLinkedInAuthentication();
-    });
-
-    // Esta función se debe llamar en la página de redirección (linkedin-auth-callback)
-    function obtenerTokenDeAcceso() {
-      // Obtiene el código de autorización de la URL de redirección
-      const urlParams = new URLSearchParams(window.location.search);
-      const code = urlParams.get('code');
-
-      // Realiza una solicitud para obtener el token de acceso
-      fetch('https://www.linkedin.com/oauth/v2/accessToken', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `grant_type=authorization_code&code=${code}&redirect_uri=${redirectUri}&client_id=${clientId}&client_secret=TU_CLIENT_SECRET`, // Reemplaza con tu Client Secret
-      })
-        .then(response => response.json())
-        .then(data => {
-          const accessToken = data.access_token;
-
-          // Utiliza accessToken para hacer una solicitud a la API de LinkedIn y obtener la información del usuario
-          obtenerInformacionDeUsuario(accessToken);
-        })
-        .catch(error => {
-          console.error('Error al obtener el token de acceso:', error);
-        });
-    }
-
-    function obtenerInformacionDeUsuario(accessToken) {
-      // Realiza una solicitud a la API de LinkedIn para obtener la información del usuario
-      fetch('https://api.linkedin.com/v2/me', {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-        },
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Información del usuario:', data);
-        })
-        .catch(error => {
-          console.error('Error al obtener la información del usuario:', error);
-        });
-    }
-  </script>
+    <!-- Incluye el archivo JavaScript externo -->
+    <script src="linkedin-share.js"></script>
 </body>
 </html>
