@@ -84,28 +84,22 @@
   function Perfil() {
 
     // Token de acceso (reemplaza 'TU_TOKEN_DE_ACCESO' con tu token real)
-    var accessToken = 'AQUGo9nLFlOKCsgC7eWlyqm29wXZ6FXr3_11GKktAQ4LdyUbSLBquiL7MYCpD0J7iUtzegE-zo2ZpRAaSXPrI08BdIQmdIFtaJkfgmcVIo35-cYmM7bNQIAmTbeXFfm04TN1ZtTdyAtx1sXMw-zsVBQcIMT8qJnuFDtvl0zdXKuGzVHXZ0w20MvFR66yE46Y9xb_I0ZQTBAPKDT6regSzFLWtUrEetGOrKVo8pY9tMm5cJEWZkBBHwwtf53KbAmbfjuXqauVo2l8lNNl-1btGRc96fI3O_R0u8Xd8-KfsEMnXFYdnRpOpCvk-Z9gq7ohdMKzlh42MRnPSG6ykMay1WMINIq4bA';
+    var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer AQUGo9nLFlOKCsgC7eWlyqm29wXZ6FXr3_11GKktAQ4LdyUbSLBquiL7MYCpD0J7iUtzegE-zo2ZpRAaSXPrI08BdIQmdIFtaJkfgmcVIo35-cYmM7bNQIAmTbeXFfm04TN1ZtTdyAtx1sXMw-zsVBQcIMT8qJnuFDtvl0zdXKuGzVHXZ0w20MvFR66yE46Y9xb_I0ZQTBAPKDT6regSzFLWtUrEetGOrKVo8pY9tMm5cJEWZkBBHwwtf53KbAmbfjuXqauVo2l8lNNl-1btGRc96fI3O_R0u8Xd8-KfsEMnXFYdnRpOpCvk-Z9gq7ohdMKzlh42MRnPSG6ykMay1WMINIq4bA");
+myHeaders.append("Cookie", "lidc=\"b=OB58:s=O:r=O:a=O:p=O:g=2942:u=179:x=1:i=1699385988:t=1699453569:v=2:sig=AQHetqao1DTYN0XHTFIAvbUHVGK__xed\"; bcookie=\"v=2&c6fa48cd-bc82-4498-8dbe-76b45ba9a2de\"");
 
-    fetch('https://api.linkedin.com/v2/userinfo', {
-      method: 'GET',
-      mode: 'no-cors',
-      headers: {
-        'Authorization': 'Bearer ' + accessToken,
-        'Content-Type': 'application/json'
-      }
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
 
-    })
-      .then(response => {
-        if (response.ok) { // Cambio: Verifica si la respuesta es exitosa
-          alert('La publicación se compartió exitosamente.');
-        } else {
-          console.log(response);
-          alert('Hubo un error al compartir la publicación.');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+fetch("https://api.linkedin.com/v2/userinfo", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+  }
 
 
 
