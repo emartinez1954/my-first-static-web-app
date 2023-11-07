@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta property="og:title" content="Título de la publicación" />
-  <meta property="og:description" content="Descripción de la publicación" />
-  <meta property="og:url" content="https://mescalina.mx/" />
-  <meta property="og:image" content="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png" />
-  <title>Compartir en LinkedIn con Token de Acceso</title>
+  <title>Autenticación de LinkedIn</title>
 </head>
 <body>
-  <button id="compartirButton">Compartir en LinkedIn</button>
+  <button id="linkedinAuthButton">Iniciar sesión con LinkedIn</button>
 
   <script>
-   /*
-    function shareOnLinkedIn() {
- 
-  var postData = {
-    comment: 'Texto del comentario',
-    content: {
-      title: 'Descubre las 16 Súper Mujeres',
-      description: 'Leading Women 2023',
-      submittedUrl: 'https://mescalina.mx/',
-      submittedImageUrl: 'https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png' 
+    var clientId = '7770w4fndtbib0'; // Reemplaza con tu Client ID
+    var redirectUri = 'https://mango-smoke-0d2d9f710.4.azurestaticapps.net/linkedin-auth-callback'; // Reemplaza con tu URL de redirección
+
+    // Función para redirigir al usuario a la página de autenticación de LinkedIn
+    function redirectToLinkedInAuthentication() {
+      var state = 'Published'; // Puedes generar un valor aleatorio
+      var scope = 'r_liteprofile r_emailaddress'; // Ámbito de permisos
+
+      // URL de autenticación de LinkedIn
+      var authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=${scope}`;
+
+      window.location.href = authUrl;
     }
-  };
 
-  var accessToken = 'AQXzQn17p1c5MGvHLS1dQFx-eK8Uvw-_jbHVN1w2y0_F6U8zBMU4vZK3x_1p5cHRvRpFPgyuZhsYZ-yGOh-TFCcJ3BWeI5KGQT69fskch7Yjw8xd83rrDOFYDPbDmFGv1ifbGwugA5tdyYAdYa6x0M4TumIpwq6mdE0S7-hl6nXkJsMBgxhEo3MnV7rkI5Ar7fQgmZpD9ZY3q-VKmLDRRf4KbGY-ow-R-OIVtphkjLae4KzCGXfHG3DUV3mVRbQ1CcPtVV9qqaO9XOqLguGMbg8cLxRGivBP-UHdho6P32JSD_NMTss7QCSfUdFl7b2c20MbkcCytouCv_hM5aATZQuk2ctfvA';
+    document.getElementById('linkedinAuthButton').addEventListener('click', function() {
+      // Redirige al usuario a la página de autenticación de LinkedIn
+      redirectToLinkedInAuthentication();
+    });
 
-  var clientId = '863pfg2m0rhwqb';
-  var clientSecret = 'kcauWKkZIbi8Gm8p';
+    // Esta función se debe llamar en la página de redirección (linkedin-auth-callback)
+    function obtenerTokenDeAcceso() {
+      // Obtiene el código de autorización de la URL de redirección
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
 
-  var body = JSON.stringify(postData);
+      // Realiza una solicitud para obtener el token de acceso
+      fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `grant_type=authorization_code&code=${code}&redirect_uri=${redirectUri}&client_id=${clientId}&client_secret=TU_CLIENT_SECRET`, // Reemplaza con tu Client Secret
+      })
+        .then(response => response.json())
+        .then(data => {
+          const accessToken = data.access_token;
 
-  fetch('https://api.linkedin.com/v2/shares', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Authorization': 'Bearer ' + accessToken,
-      'Content-Type': 'application/json',
-      'X-Restli-Protocol-Version': '2.0.0'
-    },
-    body: body
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('La publicación se compartió exitosamente en LinkedIn.');
-    } else {
-      alert('Hubo un error al compartir la publicación en LinkedIn.');
+          // Utiliza accessToken para hacer una solicitud a la API de LinkedIn y obtener la información del usuario
+          obtenerInformacionDeUsuario(accessToken);
+        })
+        .catch(error => {
+          console.error('Error al obtener el token de acceso:', error);
+        });
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-}*/
- // Reemplaza esta URL con la que deseas compartir
- var shareURL = "https://mango-smoke-0d2d9f710.4.azurestaticapps.net/";
-  
-  // Función para abrir la ventana emergente de compartir en LinkedIn
-  function shareOnLinkedIn() {
-var url = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent("https://mango-smoke-0d2d9f710.4.azurestaticapps.net/");
 
-      window.open(url, "_blank", "width=600,height=400");
-  }
-
-  // Asigna la función al botón
-  document.getElementById('compartirButton').addEventListener('click', shareOnLinkedIn);
-
-
-
+    function obtenerInformacionDeUsuario(accessToken) {
+      // Realiza una solicitud a la API de LinkedIn para obtener la información del usuario
+      fetch('https://api.linkedin.com/v2/me', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Información del usuario:', data);
+        })
+        .catch(error => {
+          console.error('Error al obtener la información del usuario:', error);
+        });
+    }
   </script>
 </body>
 </html>
