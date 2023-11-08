@@ -412,7 +412,13 @@ display:none;
   <div class="layer"></div>
 
   <div class="foto">
-  <a id="linkedin-share-button"><img class="Share" src="https://mescalina.mx/wp-content/uploads/2023/10/share.png"></a>
+     <a id="linkedin-share-button" href="http://www.linkedin.com/shareArticle?mini=true&url=https://mescalina.mx/leading-women-2023/"  
+    onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=https://mescalina.mx/leading-women-2023/', 
+                         'newwindow', 
+                         'width=500,height=650'); 
+              return false;"
+ ><img class="Share" src="https://mescalina.mx/wp-content/uploads/2023/10/share.png"></a>
+	  
 <h1 class="texto">Anna Consolato</h1>
 <img class="Nubes" src="https://mescalina.mx/wp-content/uploads/2023/11/DESKTOP.png">
 <img class="NubesM" src="https://mescalina.mx/wp-content/uploads/2023/11/MOBILE.png">
@@ -499,18 +505,7 @@ puntos.forEach((punto, index) => {
 });
 
   
-   // Reemplaza esta URL con la que deseas compartir
-          var shareURL = "https://mescalina.mx/leading-women-2023/";
   
-          // Función para abrir la ventana emergente de compartir en LinkedIn
-          function shareOnLinkedIn() {
-        var url = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent("https://mescalina.mx/leading-women-2023/");
-  
-              window.open(url, "_blank", "width=600,height=400");
-          }
-  
-          // Asigna la función al botón
-          document.getElementById("linkedin-share-button").addEventListener("click", shareOnLinkedIn);
   </script>
 </body>
 </html>
